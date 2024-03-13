@@ -46,7 +46,19 @@
                     v-for="(task, index) in tasks"
                     class="d-flex justify-content-between border-bottom mt-3"
                   >
+                  <span
+                  :class="{'text-decoration-line-through': task.done}"
+                  @click="lineCheck(index)"
+                >
                   {{ task.text }}
+                </span>
+                <span>
+                  <i
+                    @click="removeTask(index)"
+                    class="fa-solid fa-xmark text-danger"
+                  ></i>
+                </span>
+
                   </div>
                 </div>
           </div>
