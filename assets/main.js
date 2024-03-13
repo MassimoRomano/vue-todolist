@@ -30,9 +30,10 @@ createApp({
     methods: {
         /* funzione per aggiungere le task alla dom */
         addTask() {
-            this.newTask.push({ ...this.newTodo });
-            this.tasks.unshift(this.newTask)
-            this.newTask = ''
+            if (this.newTask.text.trim() !== '') {
+                this.tasks.unshift({ ...this.newTask });
+                this.newTask.text = '';
+            }
         },
         /* funzione per eliminare le task dalla dom */
         removeTask(index) {
