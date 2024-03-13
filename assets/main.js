@@ -25,5 +25,15 @@ createApp({
                 }
             ]
         }
+    },
+
+    methods: {
+        /* funzione per aggiungere le task alla dom */
+        addTask() {
+            this.newTask.push({ ...this.newTodo });
+            this.tasks.unshift(this.newTask)
+            this.newTask = ''
+        },
+        
     }
-})
+}).mount('#app')
